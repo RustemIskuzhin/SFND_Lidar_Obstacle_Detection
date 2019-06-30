@@ -244,6 +244,7 @@ std::vector<typename pcl::PointCloud<PointT>::Ptr> ProcessPointClouds<PointT>::C
 		points.push_back({p.x, p.y, p.z});
 	}
     KdTree* tree = new KdTree;
+    tree->dim = 3;
   	int it = 0;
     for (int i = 0; i < points.size(); i++){
         tree->insert(points[i], i);
